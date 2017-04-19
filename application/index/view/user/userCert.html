@@ -1,0 +1,307 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>我的认证</title>
+<link href="/thinkPHP5/public/static/css/dataManagement.css" type="text/css" rel="stylesheet"/>
+<link href="/thinkPHP5/public/static/css/footer.css" type="text/css" rel="stylesheet"/>
+<script src="/thinkPHP5/public/static/js/jquery-1.9.1.min.js"></script>
+<script src="/thinkPHP5/public/static/js/cityJson.js"></script>
+<script src="/thinkPHP5/public/static/js/citySet.js"></script>
+<script src="/thinkPHP5/public/static/js/Popt.js"></script>
+<script src="/thinkPHP5/public/static/js/ban.js"></script>
+</head>
+
+<body>
+<!--导航栏-->
+	<header class="header">
+		<div class="nav-top">
+            <ul class="nav-left">
+                <li><a href="{:url('User/userInfo')}" class="sn-user-nick">{$Think.session.user_info.user_name}</a></li>
+                <li>,欢迎来到聚创伟夜</li>
+                <li><a href="javascript:void(0)" class="sn-logout loginOff">[退出]</a></li>
+            </ul>
+            <ul class="nav-right">
+                <li><a href="#">关注聚创伟夜</a></li>
+                <li><a href="#">网站导航</a></li>
+                <li class="dropdown dropdown-a"><a href="#">客户服务</a>
+            		<ul class="droplist droplist-a" style="display: none;">
+                        <li><a href="#">聚创服务</a></li>
+                        <li><a href="#">客服服务</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    	<nav class="nav">
+        	<ul class="nav-list">
+            	<li class="nav-login"><img src="/thinkPHP5/public/static/img/logo-02.png" width="100%" height="100%"/></li>
+                <li><a href="{:url('Index/index')}">首页</a></li>
+                <li><a href="{:url('Project/projectList')}">项目</a></li>
+                <li><a href="#">活动</a></li>
+                 <li class="dropdown">
+                	<a href="#">投资<span>▼</span></a>
+                	<ul class="droplist">
+                         <span class="triangle arraw-out">
+                         <span class="triangle arraw-in"></span>
+                         </span>
+                         <li><a href="investor.html">投资人</a></li>
+                         <li><a href="investfirm.html">投资机构</a></li>
+                    </ul>
+                </li>
+                <li><a href="headLines.html">创业头条</a></li>
+                <li><a href="aboutOur.html">关于我们</a></li>
+            </ul>    
+        	<p class="btn-sm"><a href="{:url('Project/projectRelease')}">
+            	<span class="fa">
+                	+
+                </span>
+            创建项目</a></p>
+        </nav>
+    </header>
+<!--border-->
+	<div class="data-bodyer">
+    	<div class="data-bodycem">
+<!--右边导航栏-->
+        	<div class="data-bodycem-left">
+            	<h2>用户信息</h2>
+            	<p>用户管理</p>
+                <ul>
+                	<li><a href="{:url('User/userInfo')}">我的展厅</a></li>
+                    <li><a href="{:url('User/userData')}">我的资料</a></li>
+                    <li class="buy-on"><a href="{:url('User/userCert')}">我的认证</a></li>
+                    <li><a href="#">我的等级</a></li>
+                    <li><a href="{:url('User/userSecurity')}">用户安全</a></li>
+                    <li><a href="#">投诉维护</a></li>
+                    <li><a href="#">邀请注册</a></li>
+                </ul>
+                <p>人才管理</p>
+                <ul>
+                	<li><a href="#">人才资料</a></li>
+                    <li><a href="#">发布需求</a></li>
+                    <li><a href="#">人才列表</a></li>
+                    <li><a href="#">需求列表</a></li>
+                </ul>
+                <p>人脉交流</p>
+                <ul>
+                	<li><a href="#">商友与联系人</a></li>
+                    <li><a href="#">谁看过我</a></li>
+                    <li><a href="#">我看过谁</a></li>
+                    <li><a href="#">收到的名片</a></li>
+                </ul>
+                <p>会员服务</p>
+                <ul>
+                	<li><a href="#">我的订单</a></li>
+                </ul>
+                
+            </div>
+   <!--信息完善-->
+            <div class="data-bodycem-right">
+            	<div class="data-bodycem-form">
+            		<div class="data-bodycem-top">
+                  		<p>我的认证</p>
+            		</div>
+                  	<div class="data-formbody">
+                  	  <div class="data-top">
+          				<ul>
+          					<li class="data-on">
+          						<a href="#">我的认证</a>
+          					</li>
+          					<li>
+          						<a href="#">手机认证</a>
+          					</li>
+          					<li>
+          						<a href="#">邮箱认证</a>
+          					</li>
+          					<li>
+          						<a href="#">个人身份认证</a>
+          					</li>
+          				</ul>
+          			</div>
+          		<!--我的认证-->
+                  	  <div class="list_conment ">
+                  	  	<ul>
+                  	  		<li class="con-show">
+		                  	  	<div class="list_conment_child">
+		                  	  		<i class="fn-clear"></i>
+		                  	  		<h3>手机认证</h3>
+		                  	  		<p>已设置</p>
+		                  	  		<a href="javascript:void(0);" class="fn_go">修改</a>
+		                  	  	</div>
+		                  	  	<div class="list_conment_child">
+		                  	  		<i class="fn-clear"></i>
+		                  	  		<h3>绑定邮箱</h3>
+		                  	  		<p>已设置</p>
+		                  	  		<a href="javascript:void(0);" class="fn_go">修改</a>
+		                  	  	</div>
+		                  	  	<div class="list_conment_child">
+		                  	  		<i class="fn-clear"></i>
+		                  	  		<h3>个人身份认证</h3>
+		                  	  		<p>已设置</p>
+		                  	  		<a href="javascript:void(0);" class="fn_go">修改</a>
+		                  	  	</div>
+                  	  		</li>
+                  	  		<li>
+                  	  			<div class="con_phone">
+                  	  				<div class="con_phone_a">	
+	                  	  				<span class="control-span">手机号码:</span>
+	                  	  				<span class="control-text">188*****850</span>
+                  	  				</div>
+                  	  				<div class="con_phone_a">
+                  	  					<span class="control-span">验证码:</span>
+                  	  					<input type="text" class="small_textbox " />
+                  	  					<input type="button" value="获取验证码" class="ui_button">
+                  	  					<input type="button" value="提交验证" class="theme_bgcolor">
+                  	  				</div>
+                  	  			</div>
+                  	  		</li>
+                  	  		<li>
+                  	  			<div class="con_phone">
+                  	  				<div class="con_phone_a">	
+	                  	  				<span class="control-span">邮箱:</span>
+                  	  					<input type="text" class="big_textbox small_textbox" />
+                  	  				</div>
+                  	  				<div class="con_phone_a">
+                  	  					<span class="control-span">邮箱验证码  :</span>
+                  	  					<input type="text" class="small_textbox " />
+                  	  					<input type="button" value="获取验证码" class="ui_button">
+                  	  					<input type="button" value="提交验证" class="theme_bgcolor">
+                  	  				</div>
+                  	  		</li>
+                  	  		<li>
+                  	  			<div class="id_left">
+                  	  				<div class="con_phone_a">	
+	                  	  				<span class="control-id">个人身份证姓名:</span>
+                  	  					<input type="text" class="big_textbox small_textbox" />
+                  	  				</div>
+	                  	  			<div class="con_phone_a">	
+		                  	  			<span class="control-id">身份证号码:</span>
+	                  	  				<input type="text" class="big_textbox small_textbox" />
+	                  	  			</div>
+	                  	  			<div class="con_phone_a">	
+		                  	  			<span class="control-id">身份证正面照:</span>
+	                  	  				<input type="text" class="control-idimg" />
+	                  	  			</div>
+	                  	  			<div class="con_phone_a">	
+		                  	  			<span class="control-id">身份证反面照:</span>
+	                  	  				<input type="text" class="control-idimg" />
+	                  	  			</div>
+	                  	  			<div class="con_phone_a">	
+		                  	  			<span class="control-id">手持身份证照片:</span>
+	                  	  				<input type="text" class="control-idimg" />
+	                  	  			</div>
+                  	  			</div>
+                  	  			<div class="id_right">
+                  	  				<div class="id_right_list">
+                  	  					<p class="case_text">身份证正面照试例：</p>
+	                  	  				<p class="id_left_img">
+	                  	  					<img src="/thinkPHP5/public/static/img/shenfenzheng.gif" width="100%" height="100%" />
+	                  	  				</p>
+                  	  				</div>
+                  	  				<div class="id_right_list">
+                  	  					<p class="case_text">身份证反面照试例：</p>
+	                  	  				<p class="id_left_img">
+	                  	  					<img src="/thinkPHP5/public/static/img/idfan_02.png" width="100%" height="100%" />
+	                  	  				</p>
+                  	  				</div>
+                  	  				<div class="id_right_list">
+                  	  					<p class="case_text">手持身份证照片试例：</p>
+	                  	  				<p class="id_left_img_a">
+	                  	  					<img src="/thinkPHP5/public/static/img/shouchishenfenzheng.jpg" width="100%" height="100%" />
+	                  	  				</p>
+                  	  				</div>
+                  	  			</div>
+                  	  			<div class="con_but">
+                  	  				<input type="button" value="提交验证" class="theme_bgcolor button_a">
+                  	  			</div>
+                  	  		</li>
+                  	  	</ul>
+                  	  </div>
+                 </div>
+            </div>
+        </div>
+    </div>
+   <!--尾部信息-->
+   <div class="footer">
+   		<div class="footer_container">
+        	<div class="directory-img directory-co">
+            	<a href="#">
+                	<img src="/thinkPHP5/public/static/img/logo-02.png" width="100%" height="100%">
+                </a>
+                <p class="login_buttom">
+                	<img src="/thinkPHP5/public/static/img/app_download_code1.png" width="100%" height="100%"/>
+                </p>
+             </div>
+            <div class="directory-co">
+            	<h3>发现</h3>
+                <ul>
+                	<li><a href="project.html">项目</a></li>
+                	<li><a href="#">活动</a></li>
+                	<li><a href="investor.html">投资人</a></li>
+                	<li><a href="investfirm.html">投资机构</a></li>
+                	<li><a href="headLines.html">创业头条</a></li>
+                	<li><a href="aboutOur.html">关于我们</a></li>
+                </ul>
+            </div>
+            <div class="directory-co">
+            	<h3>产品与服务</h3>
+                <ul>
+                	<li><a href="#">创建活动</a></li>
+                	<li><a href="#">创建项目</a></li>
+                	<li><a href="#">聚创大会</a></li>
+                </ul>
+            </div>
+            <div class="directory-co">
+            	<h3>联系我们</h3>
+                <ul>
+                	<li><a href="#">邮件：hi@juchuang.com</a></li>
+                	<li><a href="#">QQ交流群:12345678</a></li>
+                </ul>
+            </div>
+            <div class="directory-co">
+            	<h3>关注</h3>
+                <a href="#" class="flow">
+                	<img src="/thinkPHP5/public/static/img/wechat.png" width="100%" height="100%"/>
+                </a>
+                <a href="#" class="flow">
+                	<img src="/thinkPHP5/public/static/img/weibo.png" width="100%" height="100%"/>
+                </a>
+            </div>
+        </div>
+       <!--友情链接-->
+       <div class="footer_bottom">
+       		<div class="border-bottom-con">
+            	<ul>
+                	<li class="bordernone">友情链接:</li>
+                    <li><a href="#">来福直播</a></li>
+                    <li><a href="#">博将资本</a></li>
+                    <li><a href="#">乐视云</a></li>
+                    <li><a href="#">coding直码</a></li>
+                    <li><a href="#">个推推送</a></li>
+                    <li><a href="#">七牛云</a></li>
+                    <li><a href="#">野狗实时云</a></li>
+                    <li><a href="#">又拍云</a></li>
+                    <li><a href="#">名商网</a></li>
+                    <li class="bordernone"><a href="#">优云双态运维</a></li>
+                </ul>
+            </div>
+            <div class="copy">
+            	Copyright © 2016 welian.com, All Rights Reserved.杭州传送门网络科技有限公司 浙ICP备14032648号 
+                <a style="color: inherit;" href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=33010602002088" target="_bank">浙公安网备33010602002088号</a>
+            </div>
+       </div>
+   </div>
+   <script>
+   		$(function(){
+			$('.data-top li').click(function(){
+				$(this).addClass('data-on').siblings().removeClass('data-on');
+				$('.list_conment li').eq($(this).index()).fadeIn().siblings().hide();
+			});
+			$('.fn_go').click(function(){
+				$('.data-top li').eq($('.fn_go').index($(this))+1).addClass('data-on').siblings().removeClass('data-on');
+				$('.list_conment li').eq($('.fn_go').index($(this))+1).fadeIn().siblings().hide();
+				
+			});
+		})
+   </script>
+</body>
+</html>
